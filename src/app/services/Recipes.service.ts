@@ -11,14 +11,14 @@ export class RecipesService {
   }
 
   getRecipes(): Observable<Recipe[]> {
-    const request = this.http.get(environment.apiUrlRecipes 
+    const request = this.http.get(environment.apiUrlRecipes
       + `&apiKey=${environment.apiKey}`
-      );
+    );
     return request as Observable<Recipe[]>;
   }
 
   getRecipeById(id: number): Observable<Recipe> {
-    const request = this.http.get(environment.apiUrlRecipesById + id + '/information' + `?gity      apiKey=${environment.apiKey}`);
+    const request = this.http.get(environment.apiUrlRecipesById + id + '/information' + `?apiKey=${environment.apiKey}`);
     return request as Observable<Recipe>;
   }
 
