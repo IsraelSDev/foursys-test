@@ -29,8 +29,5 @@ export class PanelComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  getInformation(event: Event): void {
-    console.log(event);
-  }
 
 }
