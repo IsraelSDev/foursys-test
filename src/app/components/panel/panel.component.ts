@@ -29,5 +29,14 @@ export class PanelComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
+  loadMore() {
+    this.recipeService.getRecipes().subscribe(
+      (data: any) => {
+        this.listRecipes.push(...data.recipes);
+      }
+    ),
+      (error: Error) => {
+        console.error(error);
+      }
+  }
 }

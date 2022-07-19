@@ -3,5 +3,5 @@ export const environment = {
   apiUrl: 'https://api.spoonacular.com',
   apiUrlRecipes: 'https://api.spoonacular.com/recipes/random?number=12',
   apiUrlRecipesById: 'https://api.spoonacular.com/recipes/',
-  apiKey: 'b0ad4d6019834327b384f29dd5c3844c'
+  apiKey: 'c6173a0a18a242398c6748fb8c65c022'
 };
