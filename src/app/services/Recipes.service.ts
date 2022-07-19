@@ -11,14 +11,12 @@ export class RecipesService {
   }
 
   getRecipes(): Observable<Recipe[]> {
-    const request = this.http.get(environment.apiUrlRecipes,
-      { headers: { 'x-api-key': `${environment.apiKey}` } });
+    const request = this.http.get(environment.apiUrlRecipes + `&apiKey=${environment.apiKey}`);
     return request as Observable<Recipe[]>;
   }
 
   getRecipeById(id: number): Observable<Recipe> {
-    const request = this.http.get(environment.apiUrlRecipesById + id + '/information',
-      { headers: { 'x-api-key': `${environment.apiKey}` } });
+    const request = this.http.get(environment.apiUrlRecipesById + id + '/information' + `?apiKey=${environment.apiKey}`);
     return request as Observable<Recipe>;
   }
 
