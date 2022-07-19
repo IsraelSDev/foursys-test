@@ -1,0 +1,45 @@
+<div class="container-xl d-flex justify-content-center">
+  <div class="row">
+    <div class="col-xl-12">
+      <h1 class="title">Receitas</h1>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div
+    class="col-xl-12 d-flex flex-wrap justify-content-center"
+    *ngIf="listRecipes != null; else defaultCard"
+  >
+    <div class="col-xl-3" *ngFor="let card of listRecipes">
+      <div class="card" style="width: 18rem">
+        <img
+          [src]="card.image ? card.image : '../../../assets/notfound-image.png'"
+          class="card-img-top"
+          [alt]="card.title"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ card.title }}</h5>
+          <p class="card-text">{{ card.creditsText }}</p>
+          <a (click)="getInformation($event)" href="#" class="btn btn-primary"
+            >Ver detalhes</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #defaultCard>
+  <div class="card card-default" style="width: 18rem">
+    <img
+      src="../../../assets/notfound-image.png"
+      class="card-img-top"
+      alt="not-found-image"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Receita não encontrada</h5>
+      <p class="card-text">Não foi possível encontrar sua receita. :(</p>
+      <a href="#" class="btn btn-primary">Atualizar página</a>
+    </div>
+  </div>
+</ng-template>
