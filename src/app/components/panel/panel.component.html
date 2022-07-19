@@ -8,7 +8,7 @@
 <div class="row justify-content-center">
   <div
     class="col-xl-12 d-flex flex-wrap justify-content-center"
-    *ngIf="listRecipes != null; else defaultCard"
+    *ngIf="listRecipes.length > 0; else defaultCard"
   >
     <div class="col-xl-3" *ngFor="let card of listRecipes">
       <div class="card" style="width: 18rem">
@@ -39,7 +39,7 @@
     <div class="card-body">
       <h5 class="card-title">Receita não encontrada</h5>
       <p class="card-text">Não foi possível encontrar sua receita. :(</p>
-      <a href="#" class="btn btn-primary">Atualizar página</a>
+      <a href="/" class="btn btn-primary">Atualizar página</a>
     </div>
   </div>
 </ng-template>
