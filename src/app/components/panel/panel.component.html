@@ -30,16 +30,7 @@
 </div>
 
 <ng-template #defaultCard>
-  <div class="card card-default" style="width: 18rem">
-    <img
-      src="../../../assets/notfound-image.png"
-      class="card-img-top"
-      alt="not-found-image"
-    />
-    <div class="card-body">
-      <h5 class="card-title">Receita não encontrada</h5>
-      <p class="card-text">Não foi possível encontrar sua receita. :(</p>
-      <a href="/" class="btn btn-primary">Atualizar página</a>
-    </div>
+  <div class="spinner-border" style="width: 5rem; height: 5rem" role="status">
+    <span class="visually-hidden">Loading...</span>
   </div>
 </ng-template>
