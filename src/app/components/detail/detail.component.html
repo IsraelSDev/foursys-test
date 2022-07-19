@@ -1,1 +1,70 @@
-<p>detail works!</p>
+<div class="container-xxl">
+  <div class="row" *ngIf="recipe !== undefined; else loading">
+    <div class="col-xl-12 col-arrow">
+      <a routerLink="/home">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="200"
+          height="60"
+          fill="currentColor"
+          class="bi bi-arrow-left"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+          />
+        </svg>
+      </a>
+    </div>
+    <div class="container-xxl">
+      <div class="row">
+        <div class="col-xl-12 d-flex justify-content-center">
+          <h1 class="title">{{ recipe.title }}</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12 d-flex justify-content-center">
+          <img [src]="recipe.image" class="img-fluid" [alt]="recipe.title" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container-xl">
+      <div class="row">
+        <div class="col-xl-12 d-flex justify-content-center">
+          <h4 class="col-arrow">Ingredientes</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12">
+          <ul class="list-group">
+            <li
+              class="list-group-item"
+              *ngFor="let ingredient of recipe.extendedIngredients"
+            >
+              {{ ingredient.name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-xl">
+      <div class="row">
+        <div class="col-xl-12 d-flex justify-content-center">
+          <h4 class="col-arrow">Modo de preparo:</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12 col-arrow" [innerHTML]="instructionString"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</ng-template>

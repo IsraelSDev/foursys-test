@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from "../../models/Recipe.model";
 import { Subscriber } from 'rxjs';
-import { RecipesServices } from '../../services/Recipes.service';
+import { RecipesService } from '../../services/Recipes.service';
 
 @Component({
   selector: 'app-panel',
   templateUrl: './panel.component.html',
   styleUrls: ['./panel.component.sass'],
-  providers: [RecipesServices]
+  providers: [RecipesService]
 })
 export class PanelComponent implements OnInit {
 
   listRecipes: Recipe[] = [];
 
-  constructor(private recipeService: RecipesServices) {
+  constructor(private recipeService: RecipesService) {
     this.recipeService.getRecipes().pipe(
 
     ).subscribe(

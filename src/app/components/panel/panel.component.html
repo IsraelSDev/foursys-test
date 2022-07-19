@@ -18,9 +18,9 @@
           [alt]="card.title"
         />
         <div class="card-body">
-          <h5 class="card-title">{{ card.title }}</h5>
+          <h5 class="card-title">{{ card.title + " " + card.id }}</h5>
           <p class="card-text">{{ card.creditsText }}</p>
-          <a (click)="getInformation($event)" href="#" class="btn btn-primary"
+          <a [routerLink]="['/detail', card.id]" class="btn btn-primary"
             >Ver detalhes</a
           >
         </div>

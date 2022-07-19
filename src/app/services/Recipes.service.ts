@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 import { Recipe } from "../models/Recipe.model";
 
 @Injectable()
-export class RecipesServices {
+export class RecipesService {
   constructor(private http: HttpClient) {
 
   }
@@ -14,6 +14,12 @@ export class RecipesServices {
     const request = this.http.get(environment.apiUrlRecipes,
       { headers: { 'x-api-key': `${environment.apiKey}` } });
     return request as Observable<Recipe[]>;
+  }
+
+  getRecipeById(id: number): Observable<Recipe> {
+    const request = this.http.get(environment.apiUrlRecipesById + id + '/information',
+      { headers: { 'x-api-key': `${environment.apiKey}` } });
+    return request as Observable<Recipe>;
   }
 
 }
